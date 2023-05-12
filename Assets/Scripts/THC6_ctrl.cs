@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.AI;
+public class THC6_ctrl : MonoBehaviour
+{
 
-public class THC6_ctrl : MonoBehaviour {
+
 	
-	
-	private Animator anim;
 	private CharacterController controller;
 	private int battle_state = 0;
-	public float speed = 6.0f;
+
 	public float runSpeed = 3.0f;
 	public float turnSpeed = 60.0f;
 	public float gravity = 20.0f;
@@ -15,23 +16,48 @@ public class THC6_ctrl : MonoBehaviour {
 	private float w_sp = 0.0f;
 	private float r_sp = 0.0f;
 
-	
+	public Transform objective;
+	public float speed ;
+	public NavMeshAgent IA;
+	public Animator anim;
+	public string walk;
+	public string attack;
+
 	// Use this for initialization
-	void Start () 
-	{						
-		anim = GetComponent<Animator>();
+	void Start()
+	{
+
+		/*anim = GetComponent<Animator>();
 		controller = GetComponent<CharacterController> ();
 		w_sp = speed; //read walk speed
 		r_sp = runSpeed; //read run speed
 		battle_state = 0;
-		runSpeed = 1;
-
+		runSpeed = 1;*/
+		GameObject enemigoObjeto = GameObject.Find("Monster");
+		enemigoObjeto.SetActive(true);
 	}
-	
+
 	// Update is called once per frame
-	void Update () 
-	{		
-		if (Input.GetKey ("1"))  // turn to still state
+	void Update()
+	{
+		IA.speed = speed;
+		;
+		IA.SetDestination(objective.position);
+		//
+		if (IA.speed>0) {
+			anim.SetFloat("Move",1); // numero, el del condicional
+		}
+		if (IA.speed == 0)
+		{
+			anim.SetFloat("Move", 0);
+		}
+		if (Vector3.Distance(gameObject.transform.position, objective.transform.position)<3)
+		{			
+			anim.SetTrigger("Attack");
+		}
+			
+
+		/*if (Input.GetKey ("1"))  // turn to still state
 		{ 		
 			anim.SetInteger ("battle", 0);
 			battle_state = 0;
@@ -127,7 +153,8 @@ public class THC6_ctrl : MonoBehaviour {
 		}
 		moveDirection.y -= gravity * Time.deltaTime;
 		controller.Move (moveDirection * Time.deltaTime);
-		}
+		}*/
+	}
 }
 
 
