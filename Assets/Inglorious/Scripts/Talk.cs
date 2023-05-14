@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-public class Talk : MonoBehaviour
+using Inglorious.Scripts;
+public class Talk : IEnemyIA
 {
 	private CharacterController controller;
 	private int battle_state = 0;

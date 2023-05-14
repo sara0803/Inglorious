@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-public class Walking : MonoBehaviour
+using Inglorious.Scripts;
+public class Walking : IEnemyIA
 {
 	private CharacterController controller;
 	private int battle_state = 0;
@@ -20,6 +21,7 @@ public class Walking : MonoBehaviour
 	public Animator anim;
 	public string walk;
 	public string attack;
+	
 
 	// Use this for initialization
 	void Start()
@@ -54,6 +56,7 @@ public class Walking : MonoBehaviour
 		{
 			//anim.SetTrigger("Attack");
 			anim.SetTrigger("Jump");
+			Debug.Log("esta saltando");
 		}
 
 	}

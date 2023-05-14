@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Inglorious.Scripts;
 
-public class Rising : MonoBehaviour
+public class Rising : IEnemyIA
 {
 	private CharacterController controller;
 	private int battle_state = 0;

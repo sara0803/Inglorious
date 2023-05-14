@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     public float speed = 5;
     private Vector3 direction;
 
+    private int health = 1;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -27,10 +29,10 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         currentRotation = transform.rotation;
-        // Obtener la entrada del teclado y la direcciÛn del jugador
+        // Obtener la entrada del teclado y la direcci√≥n del jugador
         float input = Input.GetAxisRaw("Horizontal");
         Vector3 direction = new Vector3(input, 0, 0);
-        // Si se est· moviendo hacia la izquierda, rotar el jugador 180 grados
+        // Si se est√° moviendo hacia la izquierda, rotar el jugador 180 grados
         if (direction.x < 0)
         {
             transform.rotation = Quaternion.Euler(0, 270, 0);
@@ -71,4 +73,7 @@ public class PlayerController : MonoBehaviour
        
             isOnGround = true;
     }
+   
+    
+    
 }

@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.AI;
-public class THC6_ctrl : MonoBehaviour
+using Inglorious.Scripts;
+public class THC6_ctrl : IEnemyIA
 {
+	
 	public int saludMaxima = 100; // La salud máxima del personaje
 	public int saludActual; // La salud actual del personaje
 	public int dañoRecibido = 10; // La cantidad de daño que recibe el personaje al ser golpeado
@@ -53,10 +55,14 @@ public class THC6_ctrl : MonoBehaviour
 		if (Vector3.Distance(gameObject.transform.position, objective.transform.position)<3)
 		{			
 			anim.SetTrigger("Attack");
+			
+			
 		}
 			
 
 	}
+
+	
 }
 
 
