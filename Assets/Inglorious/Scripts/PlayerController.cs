@@ -47,9 +47,26 @@ public class PlayerController : MonoBehaviour
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 
             isOnGround = false;
+            anim.SetBool("PlayerJump", true);
             anim.SetFloat("Move", 0f);
+        }
 
+        if (isOnGround)
+        {
+            anim.SetBool("PlayerTouchFloor", true);
+            anim.SetBool("PlayerJump", false);
 
+        }else{
+            anim.SetBool("PlayerTouchFloor", false);
+        }
+
+        //Animation Crouching
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            anim.SetBool("is_crouching", true);
+        }
+        else{
+            anim.SetBool("is_crouching", false);
         }
 
         Vector3 velocity = playerRb.velocity;
