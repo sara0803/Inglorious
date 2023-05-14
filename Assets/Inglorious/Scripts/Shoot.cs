@@ -13,13 +13,12 @@ public class Shoot : MonoBehaviour
     public AudioClip shoot;
     private bool soundShoot=true;
     
-    //private AudioSource ;
     void Start()
     {
         playerAudio = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         currentRotation = transform.rotation;
@@ -28,7 +27,7 @@ public class Shoot : MonoBehaviour
             Rigidbody rb = bulletTemp.GetComponent<Rigidbody>();
             rb.AddForce(currentRotation * Vector3.forward * bulletSpeed);
             Destroy(bulletTemp, 5.0f);
-            //verificar si puede sonar
+
             if (soundShoot)
             {
 
