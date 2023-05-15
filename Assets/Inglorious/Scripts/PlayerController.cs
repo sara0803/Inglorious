@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
+
+  
   
     private void FixedUpdate()
     {
@@ -64,9 +66,16 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftControl))
         {
             anim.SetBool("is_crouching", true);
+            gameObject.GetComponent<CapsuleCollider>().height=1.5f;
+            gameObject.GetComponent<CapsuleCollider>().center= new Vector3 (-0.02f, 0.68f, -0.02f);
+
         }
         else{
             anim.SetBool("is_crouching", false);
+            gameObject.GetComponent<CapsuleCollider>().height=2.63f;
+            gameObject.GetComponent<CapsuleCollider>().center= new Vector3 (-0.02f, 1.23f, -0.02f);
+
+
         }
 
         Vector3 velocity = playerRb.velocity;

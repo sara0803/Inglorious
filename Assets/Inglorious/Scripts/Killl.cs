@@ -31,6 +31,7 @@ public class Killl : MonoBehaviour
                 {
                     Destroy(this.gameObject.GetComponent<IEnemyIA>());
                     Destroy(this.gameObject.GetComponent<NavMeshAgent>());
+                    Destroy(this.gameObject.GetComponent<CapsuleCollider>());
                     StartCoroutine(TimeWait());
                     
                 }
