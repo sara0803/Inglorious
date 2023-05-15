@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Shoot : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -12,6 +13,7 @@ public class Shoot : MonoBehaviour
     private AudioSource playerAudio;    
     public AudioClip shoot;
     private bool soundShoot=true;
+    
     
     void Start()
     {
@@ -26,7 +28,7 @@ public class Shoot : MonoBehaviour
             GameObject bulletTemp = Instantiate(bulletPrefab, bulletInit.transform.position, bulletInit.transform.rotation) as GameObject;
             Rigidbody rb = bulletTemp.GetComponent<Rigidbody>();
             rb.AddForce(currentRotation * Vector3.forward * bulletSpeed);
-            Destroy(bulletTemp, 5.0f);
+            Destroy(bulletTemp, 1.0f);
 
             if (soundShoot)
             {
@@ -43,4 +45,5 @@ public class Shoot : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         soundShoot = true;
     }
+    
 }

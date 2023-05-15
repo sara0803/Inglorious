@@ -8,7 +8,7 @@ using UnityEngine.AI;
 
 public class Killl : MonoBehaviour
 {
-    public int health = 3;
+    public int health = 100;
     public Animator anim;
     private bool ifdie=true;
 

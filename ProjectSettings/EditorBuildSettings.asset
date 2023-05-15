@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 5383f05862b1a094d867bff9f9478488
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 4a3cf3a5e4cc7f841bdda326feddf11b
+  - enabled: 1
+    path: Assets/Inglorious/Scenes/ArnoldScene.unity
+    guid: a6ec986f787a3834db86b9e98c9fde53
   m_configObjects: {}
