@@ -11,17 +11,21 @@ public class Killl : MonoBehaviour
     public int health = 100;
     public Animator anim;
     private bool ifdie=true;
+    public AudioClip monsterSound;
+    private AudioSource playerAudio;
 
-
-   
+    private void Start()
+    {
+        playerAudio = GetComponent<AudioSource>();
+    }
 
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("Trigger detected with: " + other.gameObject.name);
         if (other.gameObject.CompareTag("Bullet"))
         {
-            health -= 1;    
-
+            health -= 1;
+            
             Destroy(other.gameObject);
 
             if (health <= 0)
@@ -29,6 +33,7 @@ public class Killl : MonoBehaviour
                 
                 if (ifdie)
                 {
+                    
                     Destroy(this.gameObject.GetComponent<IEnemyIA>());
                     Destroy(this.gameObject.GetComponent<NavMeshAgent>());
                     Destroy(this.gameObject.GetComponent<CapsuleCollider>());
@@ -52,7 +57,9 @@ public class Killl : MonoBehaviour
         Debug.Log("debe de parar de saltar");
         ifdie = false;
         anim.SetTrigger("Die");
+        playerAudio.PlayOneShot(monsterSound, 1.0f);
         yield return new WaitForSeconds(3.0f);
+        
         Destroy(gameObject);
         ifdie = true;
         

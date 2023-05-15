@@ -15,6 +15,7 @@ public class PlayerSpawner : MonoBehaviour
     public void SpawnPlayer()
     {
         player.gameObject.SetActive(true);
-        player.transform.position = playerPrefab.transform.position;
+        //player.transform.position = playerPrefab.transform.position;
+        player.transform.position = new Vector3(11.72f, -23.12f, -1.28f); ;
     }
 }

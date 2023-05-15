@@ -46,7 +46,13 @@ public class THC6_ctrl : IEnemyIA
 		if (objective!=null)
 		{
 			IA.speed = speed;
-			IA.SetDestination(objective.position);
+			if (Vector3.Distance(gameObject.transform.position, objective.transform.position) < 10f)
+			{
+				IA.SetDestination(objective.position);
+
+
+			}
+			
 
 			if (IA.speed > 0)
 			{
@@ -56,7 +62,7 @@ public class THC6_ctrl : IEnemyIA
 			{
 				anim.SetFloat("Move", 0);
 			}
-			if (Vector3.Distance(gameObject.transform.position, objective.transform.position) < 3)
+			if (Vector3.Distance(gameObject.transform.position, objective.transform.position) < 100f)
 			{
 				anim.SetTrigger("Attack");
 

@@ -17,13 +17,15 @@ public class PlayerController : MonoBehaviour
 
     private int health = 1;
 
+
+
     void Start()
     {
         
         anim = GetComponent<Animator>();
         playerRb = GetComponent<Rigidbody>();
-     
-        
+       
+
     }
 
     // Update is called once per frame

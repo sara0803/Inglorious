@@ -28,7 +28,7 @@ public class Shoot : MonoBehaviour
             GameObject bulletTemp = Instantiate(bulletPrefab, bulletInit.transform.position, bulletInit.transform.rotation) as GameObject;
             Rigidbody rb = bulletTemp.GetComponent<Rigidbody>();
             rb.AddForce(currentRotation * Vector3.forward * bulletSpeed);
-            Destroy(bulletTemp, 1.0f);
+            
 
             if (soundShoot)
             {
