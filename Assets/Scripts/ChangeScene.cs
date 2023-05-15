@@ -10,6 +10,7 @@ public class ChangeScene : MonoBehaviour
     
     public void LoadScene(string _scene)
     {
+        Debug.Log("HOLAAAAAAAAAAAAAAAAA");
         SceneManager.LoadScene(_scene);
         
     }

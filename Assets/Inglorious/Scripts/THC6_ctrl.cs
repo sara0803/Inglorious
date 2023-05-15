@@ -41,23 +41,31 @@ public class THC6_ctrl : IEnemyIA
 	// Update is called once per frame
 	void Update()
 	{
-		IA.speed = speed;
-		;
-		IA.SetDestination(objective.position);
-
-		if (IA.speed>0) {
-			anim.SetFloat("Move",1); // numero, el del condicional
-		}
-		if (IA.speed == 0)
+		
+		
+		if (objective!=null)
 		{
-			anim.SetFloat("Move", 0);
+			IA.speed = speed;
+			IA.SetDestination(objective.position);
+
+			if (IA.speed > 0)
+			{
+				anim.SetFloat("Move", 1); // numero, el del condicional
+			}
+			if (IA.speed == 0)
+			{
+				anim.SetFloat("Move", 0);
+			}
+			if (Vector3.Distance(gameObject.transform.position, objective.transform.position) < 3)
+			{
+				anim.SetTrigger("Attack");
+
+
+			}
 		}
-		if (Vector3.Distance(gameObject.transform.position, objective.transform.position)<3)
-		{			
-			anim.SetTrigger("Attack");
 			
-			
-		}
+
+		
 			
 
 	}

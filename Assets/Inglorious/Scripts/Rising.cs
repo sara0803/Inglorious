@@ -36,11 +36,14 @@ public class Rising : IEnemyIA
 
 		//
 
-
-		if (Vector3.Distance(gameObject.transform.position, objective.transform.position) < 100)
+		if (objective != null)
 		{
-			
-			anim.SetTrigger("Rising");
+			if (Vector3.Distance(gameObject.transform.position, objective.transform.position) < 100)
+			{
+
+				anim.SetTrigger("Rising");
+			}
 		}
+		
 	}
 }

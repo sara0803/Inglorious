@@ -12,9 +12,10 @@ public class ShowGameOverMenu : MonoBehaviour
     [SerializeField] private GameObject _menuGameOver;
     private PlayerDeath _gameOver;
 
-    private void Start()
+    private void Update()
     {
         _gameOver = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDeath>();
+        Debug.Log("LO ENCONTRÉ");
         _gameOver._playerDeath += ShowMenuGO;
         
     }

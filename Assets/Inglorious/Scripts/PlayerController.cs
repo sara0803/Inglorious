@@ -7,21 +7,22 @@ public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
     private Rigidbody playerRb;
-    public float jumpForce = 10f;
+    public float jumpForce;
     public float gravityModifier;
     private bool isOnGround = true;
     private Animator anim;
     public Quaternion currentRotation;
-    public float speed = 5;
+    public float speed;
     private Vector3 direction;
 
     private int health = 1;
 
     void Start()
     {
+        
         anim = GetComponent<Animator>();
         playerRb = GetComponent<Rigidbody>();
-        Physics.gravity *= gravityModifier;
+     
         
     }
 

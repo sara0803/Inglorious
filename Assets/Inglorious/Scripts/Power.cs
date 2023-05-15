@@ -38,15 +38,21 @@ public class Power : IEnemyIA
 	// Update is called once per frame
 	void Update()
 	{
-		IA.speed = speed;
-
-		//
-		if (Vector3.Distance(gameObject.transform.position, objective.transform.position) < 100)
+		if (objective != null) 
 		{
+			IA.speed = speed;
 
-			//IA.SetDestination(objective.position);
-			anim.SetTrigger("Power"); //no movement
+			//
+
+			if (Vector3.Distance(gameObject.transform.position, objective.transform.position) < 100)
+			{
+
+				//IA.SetDestination(objective.position);
+				anim.SetTrigger("Power"); //no movement
+			}
+
 		}
+			
 		//
 
 
