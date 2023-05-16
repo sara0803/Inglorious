@@ -15,7 +15,7 @@ public class ShowGameOverMenu : MonoBehaviour
     private void Update()
     {
         _gameOver = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDeath>();
-        Debug.Log("LO ENCONTRÉ");
+       // Debug.Log("LO ENCONTRï¿½");
         _gameOver._playerDeath += ShowMenuGO;
         
     }

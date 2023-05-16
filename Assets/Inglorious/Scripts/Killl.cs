@@ -54,7 +54,7 @@ public class Killl : MonoBehaviour
 
     IEnumerator TimeWait() { 
 
-        Debug.Log("debe de parar de saltar");
+        
         ifdie = false;
         anim.SetTrigger("Die");
         playerAudio.PlayOneShot(monsterSound, 1.0f);
